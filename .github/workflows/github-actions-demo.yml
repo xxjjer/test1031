@@ -7,8 +7,10 @@ on:
   pull_request:
     branches:
       - main
-      - 'releases/**'
-
+on:
+  merge_group:
+    types: [checks_requested]
+    
 jobs:
   job_1:
     name: Add 3 and 7
@@ -58,6 +60,4 @@ jobs:
           echo The result is $value
 
 
-on:
-  merge_group:
-    types: [checks_requested]
+
